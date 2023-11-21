@@ -6,10 +6,10 @@ class PeerService {
                     {
                         urls: [
                             "stun:stun.l.google.com:19302",
-                            "stun:global.stun.twilio.com:3478"
-                        ]
-                    }
-                ]
+                            "stun:global.stun.twilio.com:3478",
+                        ],
+                    },
+                ],
             });
         }
     }
@@ -24,7 +24,7 @@ class PeerService {
     }
 
     async setLocalDescription(ans) {
-        if (this.offer) {
+        if (this.peer) {
             await this.peer.setRemoteDescription(new RTCSessionDescription(ans));
         }
     }
